@@ -1,0 +1,11 @@
+--- newlib-1.12.0/configure.orig	2004-01-05 05:38:54.000000000 +0100
++++ newlib-1.12.0/configure	2004-11-05 09:24:10.820325224 +0100
+@@ -1183,7 +1183,7 @@
+   arm-*-coff | strongarm-*-coff | xscale-*-coff)
+     noconfigdirs="$noconfigdirs ${libgcj}"
+     ;;
+-  arm-*-elf* | strongarm-*-elf* | xscale-*-elf*)
++  arm-*-elf* | strongarm-*-elf* | xscale-*-elf* | arm-*-*)
+     noconfigdirs="$noconfigdirs target-libffi target-qthreads"
+     ;;
+   arm-*-pe*)
