@@ -1,4 +1,5 @@
 Summary:	A C library intended for use on embedded systems
+Summary(pl):	Biblioteka C przeznaczona dla systemów wbudowanych
 Name:		crossarm-newlib
 Version:	1.12.0
 Release:	0.1
@@ -9,6 +10,7 @@ Source0:	ftp://sources.redhat.com/pub/newlib/newlib-%{version}.tar.gz
 Patch0:		%{name}-configure.patch
 URL:		http://sources.redhat.com/newlib/
 BuildRequires:	crossarm-gcc
+Requires:	crossarm-binutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		target		arm-pld-linux
@@ -19,6 +21,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Newlib is a C library intended for use on embedded systems. It is a
 conglomeration of several library parts, all under free software
 licenses that make them easily usable on embedded products.
+
+%description -l pl
+Newlib to biblioteka C przeznaczona dla systemów wbudowanych. Jest to
+po³±czenie ró¿nych czê¶ci biblioteki, wszystkich na wolnych
+licencjach, co czyni je ³atwo u¿ywalnymi w produktach wbudowanych.
 
 %prep
 %setup -q -n newlib-%{version}
@@ -43,11 +50,8 @@ rm -rf build && mkdir build && cd build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-# create directories if necessary
-#install -d $RPM_BUILD_ROOT
 
-cd build
-%{__make} install-target-newlib \
+%{__make} -C build install-target-newlib \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{target}-strip -g $RPM_BUILD_ROOT%{arch}/lib/libc.a
