@@ -2,7 +2,7 @@ Summary:	A C library intended for use on embedded systems
 Summary(pl):	Biblioteka C przeznaczona dla systemów wbudowanych
 Name:		crossarm-newlib
 Version:	1.12.0
-Release:	0.1
+Release:	1
 License:	several free software licenses
 Group:		Libraries
 Source0:	ftp://sources.redhat.com/pub/newlib/newlib-%{version}.tar.gz
@@ -33,6 +33,7 @@ licencjach, co czyni je ³atwo u¿ywalnymi w produktach wbudowanych.
 
 %build
 rm -rf build && mkdir build && cd build
+
 ../configure \
 	--prefix=%{_prefix} \
 	--disable-shared \
@@ -46,12 +47,14 @@ rm -rf build && mkdir build && cd build
 	--disable-newlib-supplied-syscalls \
 	--target=%{target}
 
-%{__make}
+%{__make} \
+	CFLAGS_FOR_TARGET="-mthumb -mthumb-interwork"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} -C build install-target-newlib \
+	CFLAGS_FOR_TARGET="-mthumb -mthumb-interwork" \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{target}-strip -g $RPM_BUILD_ROOT%{arch}/lib/libc.a
