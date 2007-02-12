@@ -1,5 +1,5 @@
 Summary:	A C library intended for use on embedded systems
-Summary(pl):	Biblioteka C przeznaczona dla systemów wbudowanych
+Summary(pl.UTF-8):   Biblioteka C przeznaczona dla systemÃ³w wbudowanych
 Name:		crossarm-newlib
 Version:	1.12.0
 Release:	1
@@ -22,10 +22,10 @@ Newlib is a C library intended for use on embedded systems. It is a
 conglomeration of several library parts, all under free software
 licenses that make them easily usable on embedded products.
 
-%description -l pl
-Newlib to biblioteka C przeznaczona dla systemów wbudowanych. Jest to
-po³±czenie ró¿nych czê¶ci biblioteki, wszystkich na wolnych
-licencjach, co czyni je ³atwo u¿ywalnymi w produktach wbudowanych.
+%description -l pl.UTF-8
+Newlib to biblioteka C przeznaczona dla systemÃ³w wbudowanych. Jest to
+poÅ‚Ä…czenie rÃ³Å¼nych czÄ™Å›ci biblioteki, wszystkich na wolnych
+licencjach, co czyni je Å‚atwo uÅ¼ywalnymi w produktach wbudowanych.
 
 %prep
 %setup -q -n newlib-%{version}
