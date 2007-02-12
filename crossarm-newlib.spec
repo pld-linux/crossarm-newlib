@@ -1,5 +1,5 @@
 Summary:	A C library intended for use on embedded systems
-Summary(pl.UTF-8):   Biblioteka C przeznaczona dla systemów wbudowanych
+Summary(pl.UTF-8):	Biblioteka C przeznaczona dla systemów wbudowanych
 Name:		crossarm-newlib
 Version:	1.12.0
 Release:	1
