@@ -29,7 +29,7 @@ licencjach, co czyni je łatwo używalnymi w produktach wbudowanych.
 
 %prep
 %setup -q -n newlib-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 rm -rf build && mkdir build && cd build
